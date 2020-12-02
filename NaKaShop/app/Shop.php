@@ -47,7 +47,7 @@ class Shop extends Model
         return DB::table('shop')
         ->get();//
     }
-    public static function postRegis($data){//เพิ่มสมัครสมาชิกร้านค้า
+    public static function postRegis($data){//สมัครสมาชิกร้านค้า
         return DB::table('shop')
         ->insert($data); //
     }
@@ -74,7 +74,7 @@ class Shop extends Model
         ->where('shop_id',$id)
         ->first();
     }
-    public static function updateprofile($data,$shop_id)//อัพเดต
+    public static function upProfile($data,$shop_id)//อัพเดต
 
     {
       

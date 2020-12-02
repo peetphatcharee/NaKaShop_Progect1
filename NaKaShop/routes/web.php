@@ -44,5 +44,16 @@ Route::post('updateproduct','ShopController@updateForm');//
 
 Route::get('del{id}_{shop_id}','ShopController@del_product');//ลบคอร์ส
 
-Route::get('Shop_editprofile{id}_{shop_id}','ShopController@geteditprofile');//แก้ไขโปรไฟล์
+Route::get('Shop_editprofile{shop_id}','ShopController@geteditprofile');//แก้ไขโปรไฟล์
 Route::post('UpdateProfile','ShopController@updateProfile');//
+
+
+Route::get('/Customer_register', function () {//สมัครสมาชิกลูกค้า
+    return view('Customer_register');
+});
+Route::post('register_customer','CustomerController@postRegister2');
+
+
+Route::get('/Customer_productlist', function () {//สินค้า
+    return view('Customer_productlist');
+});

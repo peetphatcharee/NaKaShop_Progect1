@@ -9,78 +9,81 @@
 
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data" action="UpdateProfile"  >
-                        <input type="hidden" name ="product_id" value="{{$product->product_id}}" >
-                        <input type="hidden" name ="shop_id" value="{{$product->shop_id}}" >
+                        
+                        <input type="hidden" name ="shop_id" value="{{$shop->shop_id}}" >
                     @csrf
                     <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ชื่อสินค้า :</label>
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
-                                name="product_name"  value="{{$product->product_name}}" required autofocus>
-                            </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">จำนวนสินค้า :</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ชื่อ-สกุล:</label>
                         <div class="col-md-6">
-                        <div class="custom-file">
-                            <input id="duration" placeholder="0.00" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                             name="product_num"  value="{{$product->product_num}}" required autofocus 
-                            >
-                         
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ราคา/หน่วย :</label>
-
-                            <div class="col-md-6">
-                                <input id="duration" placeholder="0.00" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                 name="product_price"  value="{{$product->product_price}}" required autofocus 
-                                >
-                            </div>
-                           
-                    </div>
-                    <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">รูปภาพ :</label>
-                        <div class="col-md-6">
-                        <div class="custom-file">
-                          <input type="file" class="{{ $errors->has('name') ? ' is-invalid' : '' }}"  name="product_image" 
-                          value="{{$product->product_image}}" required autofocus>
-                         
-                        </div>
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">หมวดหมู่</label>
-
-                            <div class="col-md-6">
-                                <select class="form-control" id="sel1" name="category_id" >
-                                    @foreach ($Sh as $item)
-                                        @if($item->category_id==$product->category_id)
-                                        <option value="{{ $item->category_id }}">{{ $item->category_name }}</option>
-                                        @endif
-                                    @endforeach 
-                                    @foreach ($Sh as $item)
-                                        @if($item->category_id!=$product->category_id)
-                                        <option value="{{ $item->category_id }}">{{ $item->category_name }}</option>
-                                        @endif
-                                    @endforeach 
-                                      </select>
-                            </div>
-                    </div>
-
-                   
-                    <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">รายละเอียดสินค้า</label>
-
-                        <div class="col-md-6">
-                            
-                            <textarea id="name" type="text" rows="5" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
-                                name="product_detail"  type="text" required autofocus>{{$product->product_detail}}</textarea>
+                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                            name="shop_owner"  value="{{$shop->shop_owner}}" required autofocus>
                         </div>
                 </div>
+
+                <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000"> ชื่อร้าน :</label>
+                    <div class="col-md-6">
+                    <div class="custom-file">
+                        <input id="duration" placeholder="" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                        name="shop_name"  value="{{$shop->shop_name}}" required autofocus 
+                        >
+                     
+                    </div>
+                </div>
+                </div>
+
+                <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">อีเมล :</label>
+
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
+                            name="shop_email" value="{{$shop->shop_email}}" required>
+
+                        </div>
+                       
+                </div>
+                <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">รหัสผ่าน :</label>
+                    <div class="col-md-6">
+                    <div class="custom-file">
+                        <input id="duration" placeholder="" type="password" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                        name="shop_password"  value{{$shop->shop_password}} required autofocus >
+                     
+                    </div>
+                </div>
+                </div>
+                <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">เบอร์โทร</label>
+
+                        <div class="col-md-6">
+                            <div class="custom-file">
+                                <input id="duration" placeholder="" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                                name="shop_tel"  value="{{$shop->shop_tel}}" required autofocus >
+                               
+                              </div>
+                        </div>
+                </div>
+
+               
+                <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ที่อยู่</label>
+
+                    <div class="col-md-6">
+                        
+                        <textarea  placeholder="" id="name" type="text" rows="5" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                            name="shop_address"  value="" required autofocus>{{$shop->shop_address}}</textarea>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">โลโก้ร้าน :</label>
+                <div class="col-md-6">
+                <div class="custom-file">
+                  <input type="file" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"  
+                  name="shop_logo" value="{{$shop->shop_logo}}" required autofocus>
+                </div>
+            </div>
+            </div>
 
                     <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

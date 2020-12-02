@@ -175,11 +175,10 @@ class ShopController extends Controller
 
         return redirect('login_Shop');
     }
-    public function geteditprofile($id,$shop_id) //แก้ไขโปรไฟล์
+    public function geteditprofile($shop_id) //แก้ไขโปรไฟล์
     {
 		// dd($data);
-        $shop = Sh::get_shopprofile($id,$shop_id);
-        // // $type = Ac::getType();
+        $shop = Sh::get_shopprofile($shop_id);
         $data = array('shop'=>$shop ,'shop_id'=>$shop_id);
         		//dd($data)
         return view('Shop_editprofile',$data);//ไปหน้าฟอร์มเเอดเเละดึงดาต้าไปด้วย
@@ -188,29 +187,32 @@ class ShopController extends Controller
     public function updateProfile(Request $req) //ทำการอัพเดตโปรไฟล์
     {
         
-        $product_name = $req->input("product_name");
-        $file = Input::file('product_image');
+        $shop_owner = $req->input("shop_owner");
+        $file = Input::file('shop_logo');
         $file->move(public_path().'/',$file->getClientOriginalName());
         
-        $product_id = $req->input('product_id');
-         $shop_id = $req->input('shop_id');
-        $product_num=$req->input("product_num");
-		$product_price=$req->input("product_price");
-		$product_image=$file->getClientOriginalName();
-        $product_detail=$req->input("product_detail");
-        $category_id=$req->input("category_id");
+        $shop_id  = $req->input("shop_id");
+        $shop_owner=$req->input("shop_owner");
+		$shop_name=$req->input("shop_name");
+		$shop_logo=$file->getClientOriginalName();
+        $shop_password=$req->input("shop_password");
+        $shop_email=$req->input("shop_email");
+        $shop_tel=$req->input("shop_tel");
+        $shop_address=$req->input("shop_address");
 
-        $data = array("product_id"=>$product_id,
-					"product_name"=>$product_name,		
-                    "product_num"=>$product_num,
-                    "product_price"=>$product_price,
-					"product_image"=>$product_image,
-					"product_detail"=>$product_detail);
+        $data = array("shop_id"=>$shop_id,
+					"shop_owner"=>$shop_owner,		
+                    "shop_name"=>$shop_name,
+                    "shop_password"=>$shop_password,
+					"shop_logo"=>$shop_logo,
+                    "shop_email"=>$shop_email,
+                    "shop_tel"=>$shop_tel,
+                    "shop_address"=>$shop_address);
 
-        // dd($shop_id );
+        // dd($data);
        
-        $insert = Sh::updateSh($data,$product_id);
-        return redirect("Shop_productlist".$shop_id);
+        $insert = Sh::upProfile($data,$shop_id);
+        return redirect("Shop_profile".$shop_id);
     }
     
 }

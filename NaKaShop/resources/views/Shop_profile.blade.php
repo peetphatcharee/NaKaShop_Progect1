@@ -45,7 +45,7 @@
                                 <td><p style="color: #000000">{{$key->shop_tel}}</p></td>
                                 <td><p style="color: #000000">{{$key->shop_address}}</p></td>
                                 <td><img src="<?php echo $key->shop_logo ?>" width="150"></td>
-                                <td><a href="Shop_editproduct"><button class="btn btn-warning">แก้ไข</button></a></td>
+                                <td><a href="Shop_editprofile{{$shop_id}}"><button class="btn btn-warning">แก้ไข</button></a></td>
                               </tr>
                               @endforeach
                             </table>

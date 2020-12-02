@@ -59,7 +59,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                       
                         <a class="collapse-item" href="Shop_Register">ร้านค้า</a>
-                        <a class="collapse-item" href="#">ลูกค้า</a>
+                        <a class="collapse-item" href="Customer_register">ลูกค้า</a>
                     </div>
                 </div>
             </li>

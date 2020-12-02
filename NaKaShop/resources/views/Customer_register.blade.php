@@ -127,7 +127,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0" style="color: #000000">เข้าสู่ระบบ</h1>
+                        <h1 class="h3 mb-0 " style="color: #000000">สมัครสมาชิกลูกค้า</h1>
                  
                     </div>
                     <div class="col-md-12">
@@ -140,50 +140,78 @@
                                                
                                                    
                                     
-                                                <div class="card-body">
-                                                    <form method="POST" action="login_Shop1" aria-label="">
+                                                    <div class="card-body">
+                                                        <form method="post" enctype="multipart/form-data" action="register_customer"  >
+                                                            
                                                         @csrf
-                                
                                                         <div class="form-group row">
-                                                            <label for="email" class="col-sm-4 col-form-label text-md-right" style="color: #000000">E-Mail Address</label>
-                                
+                                                                <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ชื่อ-สกุล :</label>
+                                                                <div class="col-md-6">
+                                                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                                                                    name="customer_name"  value="" required autofocus>
+                                                                </div>
+                                                        </div>
+                                    
+                                                        <div class="form-group row">
+                                                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">อีเมล :</label>
                                                             <div class="col-md-6">
-                                                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-                                
-                                                                @if ($errors->has('email'))
-                                                                    <span class="invalid-feedback" role="alert">
-                                                                        <strong>{{ $errors->first('email') }}</strong>
-                                                                    </span>
-                                                                @endif
+                                                            <div class="custom-file">
+                                                                <input id="duration" placeholder="" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                                                                name="customer_email"  value="" required autofocus 
+                                                                >
+                                                             
                                                             </div>
                                                         </div>
-                                
-                                                        <div class="form-group row">
-                                                            <label for="password" class="col-md-4 col-form-label text-md-right" style="color: #000000">Password</label>
-                                
-                                                            <div class="col-md-6">
-                                                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                                
-                                                                @if ($errors->has('password'))
-                                                                    <span class="invalid-feedback" role="alert">
-                                                                        <strong>{{ $errors->first('password') }}</strong>
-                                                                    </span>
-                                                                @endif
-                                                            </div>
                                                         </div>
-                                
+                                    
                                                         
-                                
-                                                        <div class="form-group row mb-0">
-                                                            <div class="col-md-8 offset-md-4">
-                                                                <button type="submit" class="btn btn-primary">
-                                                                    {{ __('Login') }}
-                                                                </button>
- 
+                                                        <div class="form-group row">
+                                                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">รหัสผ่าน :</label>
+                                                            <div class="col-md-6">
+                                                            <div class="custom-file">
+                                                                <input id="duration" placeholder="" type="password" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                                                                name="customer_password"  value="" required autofocus >
+                                                             
                                                             </div>
                                                         </div>
-                                                    </form>
-                                                </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                                <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">เบอร์โทร</label>
+                                    
+                                                                <div class="col-md-6">
+                                                                    <div class="custom-file">
+                                                                        <input id="duration" placeholder="" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                                                                        name="customer_tel"  value="" required autofocus >
+                                                                       
+                                                                      </div>
+                                                                </div>
+                                                        </div>
+                                    
+                                                       
+                                                        <div class="form-group row">
+                                                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ที่อยู่</label>
+                                    
+                                                            <div class="col-md-6">
+                                                                
+                                                                <textarea  placeholder="" id="name" type="text" rows="5" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                                                                    name="customer_address"  value="" required autofocus></textarea>
+                                                            </div>
+                                                    </div>
+                                    
+                                                  
+                                    
+                                                        <div class="form-group row mb-0">
+                                                                <div class="col-md-6 offset-md-4">
+                                                                    <button type="submit" class="btn btn-primary">
+                                                                        สมัคร
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                    
+                                                        </form>
+                                                        
+                                                    </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -196,7 +224,7 @@
                    
                     
                         
-          
+                        
 
 
                 </div>
@@ -226,25 +254,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

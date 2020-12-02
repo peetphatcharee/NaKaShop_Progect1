@@ -58,7 +58,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                       
                         <a class="collapse-item" href="Shop_Register">ร้านค้า</a>
-                        <a class="collapse-item" href="#">ลูกค้า</a>
+                        <a class="collapse-item" href="Customer_register">ลูกค้า</a>
                     </div>
                 </div>
             </li>
@@ -145,7 +145,7 @@
                                                             
                                                         @csrf
                                                         <div class="form-group row">
-                                                                <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ชื่อร้าน :</label>
+                                                                <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ชื่อ-สกุล:</label>
                                                                 <div class="col-md-6">
                                                                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
                                                                     name="shop_owner"  value="" required autofocus>
@@ -153,7 +153,7 @@
                                                         </div>
                                     
                                                         <div class="form-group row">
-                                                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ชื่อเจ้าของร้าน :</label>
+                                                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000"> ชื่อร้าน :</label>
                                                             <div class="col-md-6">
                                                             <div class="custom-file">
                                                                 <input id="duration" placeholder="" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
@@ -270,25 +270,6 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
