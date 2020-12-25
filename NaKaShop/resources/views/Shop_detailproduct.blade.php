@@ -31,7 +31,7 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion" style="background: #124A4A" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-store fa-4x"></i>
                 </div>
@@ -49,7 +49,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="Shop_productlist{shop_id}"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+      <a class="nav-link collapsed" href=""  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-shopping-bag fa-lg"></i>
             <span>สินค้า</span>
         </a>
@@ -68,6 +68,13 @@
         <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-shipping-fast"></i>
             <span>การจัดส่งสินค้า</span>
+        </a>
+        
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"aria-expanded="true" aria-controls="collapseUtilities">
+            <i class='fas fa-poll'></i>
+            <span>รายงาน</span>
         </a>
         
     </li>
@@ -139,7 +146,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="Shop_profile{{$shop_id}}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -162,7 +169,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0" style="color: #000000">รายการสินค้า</h1>
+                        <h1 class="h3 mb-0" style="color: #000000">รายละเอียดสินค้า</h1>
                  
                     </div>
                     <div class="col-md-12">
@@ -199,6 +206,7 @@
                                                                         <p style="color: #000000">รหัสสินค้า&nbsp;:&nbsp;{{$key->product_id}}</p>
                                                                         <p style="color: #000000">ชื่อสินค้า&nbsp;:&nbsp;{{$key->product_name}}</p>
                                                                         <p style="color: #000000">ราคา &nbsp;:&nbsp;{{$key->product_price}}</p>
+                                                                        <p style="color: #000000">จำนวน &nbsp;:&nbsp;{{$key->product_num}} ชิ้น</p>
                                                                         <p style="color: #000000">โปรโมชั่น &nbsp;:&nbsp;</p>
                                                                     
                                 

@@ -57,3 +57,6 @@ Route::post('register_customer','CustomerController@postRegister2');
 Route::get('/Customer_productlist', function () {//สินค้า
     return view('Customer_productlist');
 });
+Route::get('/Customer_detailproduct', function () {//สินค้า
+    return view('Customer_detailproduct');
+});

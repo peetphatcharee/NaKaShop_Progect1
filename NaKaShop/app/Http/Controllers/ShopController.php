@@ -24,9 +24,9 @@ class ShopController extends Controller
     public function getListPro2($id){//แสดง Product2
 
 		// dd('fghjhgf');
-		$Sh = Sh::get_Shop2($id);//แสดงรายละเอียดของแต่ละProduct
+		$product = Sh::get_Shop2($id);//แสดงรายละเอียดของแต่ละProduct
 		   
-		 $data = array('Sh'=>$Sh);     	
+        $data = array('Sh'=>$product,'shop_id'=>$id);   	
 		return view('Shop_detailproduct',$data);
 		
 		}

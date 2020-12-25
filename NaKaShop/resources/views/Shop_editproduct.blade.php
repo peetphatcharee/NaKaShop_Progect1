@@ -31,7 +31,7 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion" style="background: #124A4A" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-store fa-4x"></i>
                 </div>
@@ -49,7 +49,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="Shop_productlist{shop_id}"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href=""  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-shopping-bag fa-lg"></i>
             <span>สินค้า</span>
         </a>
@@ -68,6 +68,13 @@
         <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-shipping-fast"></i>
             <span>การจัดส่งสินค้า</span>
+        </a>
+        
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"aria-expanded="true" aria-controls="collapseUtilities">
+            <i class='fas fa-poll'></i>
+            <span>รายงาน</span>
         </a>
         
     </li>
@@ -185,7 +192,7 @@
                                                         <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">จำนวนสินค้า :</label>
                                                         <div class="col-md-6">
                                                         <div class="custom-file">
-                                                            <input id="duration" placeholder="0.00" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                                            <input id="duration" placeholder="0" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                                              name="product_num"  value="{{$product->product_num}}" required autofocus 
                                                             >
                                                          
@@ -197,7 +204,7 @@
                                                             <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ราคา/หน่วย :</label>
                                 
                                                             <div class="col-md-6">
-                                                                <input id="duration" placeholder="0.00" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                                                <input id="duration" placeholder="0" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                                                  name="product_price"  value="{{$product->product_price}}" required autofocus 
                                                                 >
                                                             </div>
@@ -207,7 +214,7 @@
                                                         <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">รูปภาพ :</label>
                                                         <div class="col-md-6">
                                                         <div class="custom-file">
-                                                          <input type="file" class="{{ $errors->has('name') ? ' is-invalid' : '' }}"  name="product_image" 
+                                                          <input type="file" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"  name="product_image" 
                                                           value="{{$product->product_image}}" required autofocus>
                                                          
                                                         </div>
@@ -305,7 +312,7 @@
                 </div>
             </div>
         </div>
-    </div>div>
+    </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->

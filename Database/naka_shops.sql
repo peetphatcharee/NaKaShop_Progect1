@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2020 at 01:05 PM
+-- Generation Time: Dec 25, 2020 at 03:48 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -41,14 +41,21 @@ CREATE TABLE `approve` (
 CREATE TABLE `customer` (
   `customer_id` int(11) NOT NULL,
   `customer_name` varchar(100) NOT NULL,
-  `customer_ password` varchar(100) NOT NULL,
-  `customer_ email` varchar(100) NOT NULL,
+  `customer_password` varchar(100) NOT NULL,
+  `customer_email` varchar(100) NOT NULL,
   `customer_tel` varchar(100) NOT NULL,
   `customer_address` varchar(100) NOT NULL,
-  `Payment_id` int(11) NOT NULL,
-  `Delivery_id` int(11) NOT NULL,
-  `reviews_id` int(11) NOT NULL
+  `Payment_id` int(11) DEFAULT NULL,
+  `Delivery_id` int(11) DEFAULT NULL,
+  `reviews_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customer_id`, `customer_name`, `customer_password`, `customer_email`, `customer_tel`, `customer_address`, `Payment_id`, `Delivery_id`, `reviews_id`) VALUES
+(1, 'ppppp', '1234567', 'peet@gmail.com', '123456789', 'asdfghjkl;\'', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -151,7 +158,11 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`product_id`, `shop_id`, `product_name`, `product_num`, `product_price`, `product_image`, `product_detail`, `category_id`) VALUES
 (25, 1, 'หมวกadsfgfhgjhj', '45', '4', 0x73686f7070696e672d636172742e706e67, '5555555555555555555', 2),
-(26, 6, 'water', '45', '5', 0x4e414b412053484f502e706e67, 'ีัรนนสงว', 2);
+(26, 6, 'water', '45', '5', 0x4e414b412053484f502e706e67, 'ีัรนนสงว', 2),
+(27, 8, 'น้ำมันมะพร้าว', '50', '300', 0x6c6f2e504e47, 'สกัดจากน้ำมะพร้าวแก้เก็บใหม่ จากสวนที่ดูแลแบบเกษตรธรรมชาติ \r\nสพอาดบริสุทธิ์ กลิ่นหอม ไม่ใส่สารกันหืน สามารถใช้รับประทานเพื่อสุขภาพ\r\nกลั้วปาก หรือใช้ภายนอกเพื่อบำรุวผิวและผมได้ดีมาก บรรจุลงขสดที่ผ่านการฆ่าเชื่อ ได้มาตรฐาน ฝาปิดมิดชิด น้ำมันมะพร้าวสกัดเย็น เหมาะสำหรับบริโภคเป็นประจำ ผลิตจากมะพร้าวพันธุ์ดี\r\n	น้ำมันมะพร้าวช่วยกระตุ้นกระบวนการเผาผลาญของร่างกาย ลดน้ำหนัก\r\nและ เพิ่มไขมันที่ดี(HDL) อีกทั้งยังช่วยสร้างภูมิต้านทานให้กับ\r\nร่างกายนอกจากนี้ยังสามารถนำใช้เพื่อบำรุงเส้นผมและผิวเพื่อความนุ่มชุ่มชื่น', 3),
+(28, 9, 'น้ำมันมะพร้าว', '5', '100', 0x6c6f2e504e47, 'สกัดจากน้ำมะพร้าวแก้เก็บใหม่ จากสวนที่ดูแลแบบเกษตรธรรมชาติ \r\nสพอาดบริสุทธิ์ กลิ่นหอม ไม่ใส่สารกันหืน สามารถใช้รับประทานเพื่อสุขภาพ\r\nกลั้วปาก หรือใช้ภายนอกเพื่อบำรุวผิวและผมได้ดีมาก บรรจุลงขสดที่ผ่านการฆ่าเชื่อ ได้มาตรฐาน ฝาปิดมิดชิด น้ำมันมะพร้าวสกัดเย็น เหมาะสำหรับบริโภคเป็นประจำ ผลิตจากมะพร้าวพันธุ์ดี\r\n	น้ำมันมะพร้าวช่วยกระตุ้นกระบวนการเผาผลาญของร่างกาย ลดน้ำหนัก\r\nและ เพิ่มไขมันที่ดี(HDL) อีกทั้งยังช่วยสร้างภูมิต้านทานให้กับ\r\nร่างกายนอกจากนี้ยังสามารถนำใช้เพื่อบำรุงเส้นผมและผิวเพื่อความนุ่มชุ่มชื่น', 3),
+(29, 11, 'น้ำมันมะพร้าว', '45', '100', 0x6c6f2e504e47, 'rtrtrtrrtrte', 3),
+(30, 11, 'สบู่', '45', '50', 0x70726f322e504e47, 'asdfhgjkl;yl9il89', 3);
 
 -- --------------------------------------------------------
 
@@ -170,7 +181,8 @@ CREATE TABLE `product_category` (
 
 INSERT INTO `product_category` (`category_id`, `category_name`) VALUES
 (1, 'เสื้อผ้า'),
-(2, 'กีฬา');
+(2, 'กีฬา'),
+(3, 'ผิวกาย');
 
 -- --------------------------------------------------------
 
@@ -222,9 +234,8 @@ CREATE TABLE `shop` (
 --
 
 INSERT INTO `shop` (`shop_id`, `shop_owner`, `shop_name`, `shop_password`, `shop_email`, `shop_tel`, `shop_address`, `shop_logo`, `created_at`, `updated_at`) VALUES
-(4, 'zdfg', 'sacsac', 'ascsa', 'peet@gmail.com', 'sca', 'csacscs', '4.png', NULL, NULL),
-(5, 'zdfg', 'eeee', '123456', 'peet@gmail.com', '123456', 't343t45t45', '2.png', NULL, NULL),
-(6, 'eee', 'eeee', 'ๅ/-ภถุึ', 'peet@gmail.com', '-ภถ', 'ะาีััรึ', 'NAKA SHOP.png', NULL, NULL);
+(10, 'พัชรี  แอแป', 'kku', '123456', 'peet@gmail.com', '0999274854', '112 ม.7', 'images.jfif', NULL, NULL),
+(11, 'พัชรี  แอแป', 'nkc', '123456', 'p@gmail.com', '0999274854', '112', 'download.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -252,23 +263,20 @@ CREATE TABLE `summary` (
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `user_type`) VALUES
-(8, 'พัชรี', 'แอแป', 'peet@gmail.com', '$2y$10$8GxEsg5n9h47iJi8RlfzIuoK0P4hOVJUAgMM3Fv4h.R0UX.MIEh7m', '8gqyrYfP58X66del2NSQz4IWMv02us6ZxVilaJKtyZnDNRVvcxOy0xRTAxXI', '2020-11-30 00:29:05', '2020-11-30 00:29:05', 'shop'),
-(9, 'พัชรี', 'แอแป', 'phatcharee.ae@kkumail.com', '$2y$10$8AnAJNkyvNLJShI9z7RWzOyZR6Y5TCIRdS6l4LH62e3eDkHXnu.8K', 'WFFph3fvynlVlmBdwiZuPYoZVzTdmDBiZwGrbpK6SVqaCJ6Lk0x1jP9y6rGY', '2020-11-30 00:45:14', '2020-11-30 00:45:14', 'shop'),
-(10, 'พัชรี', 'แอแป', 'peet1998@gmail.com', '$2y$10$JA.Fu8Kc1VBBVCUotyabvO8GPmnfbefECOtTRpinS2.FMgEDsYLUO', 'Vfh3j6u00wEXncxl0DomS4XSGUnDNk6eoceoD9gOPp51no3OciPuwRIBost6', '2020-11-30 00:59:31', '2020-11-30 00:59:31', 'shop');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `image`, `remember_token`, `created_at`, `updated_at`) VALUES
+(11, 'พัชรี', 'phatcharee.ae@kkumail.com', '$2y$10$fx/KiuGKKy9x6VssDXxvu.Z2XunbKCvgFFdgbZkM06I8U0ZPaEMkW', '1606981859.jpg', NULL, '2020-12-03 00:51:00', '2020-12-03 00:51:00');
 
 --
 -- Indexes for dumped tables
@@ -373,7 +381,7 @@ ALTER TABLE `approve`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `delivery`
@@ -403,13 +411,13 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `promotion`
@@ -427,7 +435,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `shop`
 --
 ALTER TABLE `shop`
-  MODIFY `shop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `shop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `summary`
@@ -439,7 +447,7 @@ ALTER TABLE `summary`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

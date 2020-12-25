@@ -71,6 +71,13 @@
         </a>
         
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"aria-expanded="true" aria-controls="collapseUtilities">
+            <i class='fas fa-poll'></i>
+            <span>รายงาน</span>
+        </a>
+        
+    </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -185,7 +192,7 @@
                                                             <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">จำนวนสินค้า :</label>
                                                             <div class="col-md-6">
                                                             <div class="custom-file">
-                                                                <input id="duration" placeholder="0.00" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="product_num"  value="" required autofocus 
+                                                                <input id="duration" placeholder="0" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="product_num"  value="" required autofocus 
                                                                 >
                                                              
                                                             </div>
@@ -196,9 +203,9 @@
                                                                 <label for="name" class="col-md-4 col-form-label text-md-right" style="color: #000000">ราคา/หน่วย :</label>
                                     
                                                                 <div class="col-md-6">
-                                                                    <input id="duration" placeholder="0.00" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="product_price"  value="" required autofocus 
-                                                                    >
+                                                                    <input id="duration" placeholder="0" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="product_price"  value="" required autofocus >
                                                                 </div>
+                                                                
                                                                
                                                         </div>
                                                         <div class="form-group row">

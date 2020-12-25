@@ -2,74 +2,44 @@
 
 @section('content')
 <div id="layoutSidenav_content">
-                    
+    <div class="card  text-white shadow">
+        <div class="card-body">
                             <main>
                                 <!-- Color System -->
-                                <h1 class="mt-4" ><i class="fas fa-box mr-1" style="color:#000000">สินค้าแนะนำ</i></h1>
+                                <h1 class="mt-4" ><i style="color:#000000">รายละเอียดสินค้า</i></h1>
                             <div class="row" >
-                                <div class="col-xl-4 col-md-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
+                                
+                                    
                                         <div class="card-body">
                                             <div class="text-center">
-                                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 300;"
-                                                    src="pro.png" alt="">
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800 " style="text-align: center"><p style="color:#000000">โคโคเน่ ครีม</p></div>
-                                                <img class="px-3 px-sm-4 mt-3 mb-4 float-left" style="width: 10;"
-                                                    src="star.png" alt="">
-                                                   
-                                           
-                                            <br>
-                                           
-                                            <div style="text-align: right"><h5 style="color:#000000" >ราคา 60 บาท</h5></div>
-                                            <div style="text-align: right"><p >(จำนวน 32 หลอด)</p></div>
-                                            <div style="text-align:right" ><a href="Customer_detailproduct"><button type="button" class="btn btn-info">รายละเอียด</button></a></div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
-                                        <div class="card-body">
-                                            <div class="text-center">
-                                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" width="200"
+                                                <img style="float:left;" width="300"
                                                     src="lo.png" alt="">
                                             </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800 " style="text-align: center"><p style="color:#000000">น้ำมันมะพร้าวสกัดเย็น</p></div>
-                                                <img class="px-3 px-sm-4 mt-3 mb-4 float-left" style="width: 10;"
-                                                    src="star.png" alt="">
-                                                   
-                                           
-                                            <br>
-                                           
-                                            <div style="text-align: right"><h5 style="color:#000000" >ราคา 120 บาท</h5></div>
-                                            <div style="text-align: right"><p >(จำนวน 33 ขวด)</p></div>
-                                            <div style="text-align:right" ><a href="Customer_detailproduct"><button type="button" class="btn btn-info" >รายละเอียด</a></button></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800 " style="text-align: center"><p ><h2 style="color:#000000">น้ำมันมะพร้าวสกัดเย็น</h2></p></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800 " style="text-align: center"><p style="color:#000000">กลุ่มแปรรูปผลิตภัณฑ์เกษตร ตำบลสีกาย อำเภอเมือง จังหวัดหนองคาย</p></div>
                                             
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
-                                        <div class="card-body">
-                                            <div class="text-center">
-                                                <img lass="img-fluid px-3 px-sm-4 mt-3 mb-4" width="150"
-                                                    src="pro2.png" alt="">
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800 " style="text-align: center"><p style="color:#000000">สบู่สับปะรดน้ำผึ้ง</p></div>
-                                                <img class="px-3 px-sm-4 mt-3 mb-4 float-left" style="width: 10;"
-                                                    src="star.png" alt="">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800 " style="text-align: center"><p style="color:#000000">สกัดจากน้ำมะพร้าวแก้เก็บใหม่ จากสวนที่ดูแลแบบเกษตรธรรมชาติ <br>
+                                                สะอาดบริสุทธิ์ กลิ่นหอม ไม่ใส่สารกันหืน สามารถใช้รับประทานเพื่อสุขภาพ <br>
+                                                กลั้วปาก หรือใช้ภายนอกเพื่อบำรุวผิวและผมได้ดีมาก บรรจุลงขสดที่ผ่านการฆ่าเชื่อ <br>
+                                                ได้มาตรฐาน ฝาปิดมิดชิด น้ำมันมะพร้าวสกัดเย็น เหมาะสำหรับบริโภคเป็นประจำ <br>
+                                                ผลิตจากมะพร้าวพันธุ์ดี น้ำมันมะพร้าวช่วยกระตุ้นกระบวนการเผาผลาญของร่างกาย ลดน้ำหนัก<br>
+                                                และ เพิ่มไขมันที่ดี(HDL) อีกทั้งยังช่วยสร้างภูมิต้านทานให้กับ<br>
+                                                ร่างกายนอกจากนี้ยังสามารถนำใช้เพื่อบำรุงเส้นผมและผิวเพื่อความนุ่มชุ่มชื่น</p></div>
+                                                
+                                                
+                                                    
                                                    
                                            
                                             <br>
                                            
                                             <div style="text-align: right"><h5 style="color:#000000" >ราคา 60 บาท</h5></div>
-                                            <div style="text-align: right"><p >(จำนวน 15 หลอด)</p></div>
-                                            <div style="text-align:right"><a href="Customer_detailproduct"><button type="button" class="btn btn-info">รายละเอียด</a></button></div>
+                                            <div style="text-align: right"><p >(จำนวน 45 หลอด)</p></div>
+                                            <div style="text-align:right"><button type="button" class="btn btn-info">รายละเอียด</button></div>
                                             
                                         </div>
                                     </div>
                                 </div>
+                        
                                 
                             </div>
                             

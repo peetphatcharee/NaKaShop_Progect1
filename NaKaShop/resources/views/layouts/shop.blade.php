@@ -49,7 +49,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
-        <a class="nav-link collapsed" href="Shop_productlist{shop_id}"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="Shop_productlist{{$shop_id}}"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-shopping-bag fa-lg"></i>
             <span>สินค้า</span>
         </a>
@@ -71,6 +71,14 @@
         </a>
         
     </li>
+</li>
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"aria-expanded="true" aria-controls="collapseUtilities">
+        <i class='fas fa-poll'></i>
+        <span>รายงาน</span>
+    </a>
+    
+</li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">

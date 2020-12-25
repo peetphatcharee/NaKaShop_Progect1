@@ -49,7 +49,7 @@
 
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
-        <a class="nav-link collapsed" href="Shop_productlist{shop_id}"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="Shop_productlist{{$shop_id}}"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-shopping-bag fa-lg"></i>
             <span>สินค้า</span>
         </a>
@@ -68,6 +68,13 @@
         <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-shipping-fast"></i>
             <span>การจัดส่งสินค้า</span>
+        </a>
+        
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"aria-expanded="true" aria-controls="collapseUtilities">
+            <i class='fas fa-poll'></i>
+            <span>รายงาน</span>
         </a>
         
     </li>
@@ -182,7 +189,7 @@
                                                    
                                     
                                                 <div class="card-body">
-                                                    <div align="right"> <a href="Shop_addproduct{{$shop_id}}" class="btn btn-success"><img src="<?php echo asset('shopping-cart.png' );  ?> " width="20" height="20" >&nbsp;เพิ่มสินค้า</a> </div>
+                                                    <div align="right"> <a href="Shop_addproduct{{$shop_id}}" class="btn btn-success"><i class='fas fa-plus-circle'>&nbsp;เพิ่มสินค้า</i></a> </div>
                                                     <br>
                                                     <div style="overflow:auto">   
                                                         <table class="table table-hover">
@@ -213,15 +220,15 @@
                                                                     <p style="color: #000000">รหัสสินค้า&nbsp;:&nbsp;{{$key->product_id}}</p>
                                                                     <p style="color: #000000">ชื่อสินค้า&nbsp;:&nbsp;{{$key->product_name}}</p>
                                                                     <p style="color: #000000">ราคา &nbsp;:&nbsp;{{$key->product_price}}</p>
-                                                                     <a href="Shop_detailproduct{{$key->product_id}}" class="btn btn-outline-info"><img src="<?php echo asset('info.png' );  ?> " width="15" height="15" >&nbsp;รายละเอียดเพิ่มเติม</a>
+                                                                     <a href="Shop_detailproduct{{$key->product_id}}_{{$shop_id}}" class="btn btn-outline-info"><i class='fas fa-exclamation-circle'></i>&nbsp;รายละเอียดเพิ่มเติม</a>
                                 
                                                                 </td>
                                                               
                                                                 <td style="width: 40%">
                                 
-                                                                  <a href="Shop_editproduct{{$key->product_id}}_{{$shop_id}}"><button class="btn btn-warning">แก้ไข</button></a> 
+                                                                  <a href="Shop_editproduct{{$key->product_id}}_{{$shop_id}}"><button class="btn btn-warning"><i class='fas fa-edit'></i>แก้ไข</button></a> 
                                                         
-                                                                  <a href="del{{$key->product_id}}_{{$shop_id}}"><button class="btn btn-danger">ลบ</button></a>
+                                                                  <a href="del{{$key->product_id}}_{{$shop_id}}"><button class="btn btn-danger"><i class='fas fa-trash-alt'></i>ลบ</button></a>
                                                                  
                                                                 </td>
                                                               </tr>
